@@ -22,8 +22,7 @@
     font-size: 25px;
     line-height: 35px;
     text-transform: capitalize;
-    border: 3px solid white;
-    background-color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 20px;
 }
 
@@ -68,6 +67,7 @@
 
 .comments__title {
     font-size: 45px;
+    color:white;
 }
 
 .comments__label {

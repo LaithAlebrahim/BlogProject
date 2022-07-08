@@ -41,18 +41,17 @@ function BlogDetails() {
       {post.map((post) => {
         return (
           <>
-          <div className="blog__details">
-            <h2 className="post__title1">{post.title}</h2>
-            <p className="post__text">{post.Body}</p>
-            
-          </div>
-          <div className="post__bottom">
-          <p className="post__author1">Written by {post.writer}</p>
-          <br />
-          <br />
-          <br />
-        </div>
-        </>
+            <div className="blog__details">
+              <h2 className="post__title1">{post.title}</h2>
+              <p className="post__text">{post.Body}</p>
+            </div>
+            <div className="post__bottom">
+              <p className="post__author1">Written by {post.writer}</p>
+              <br />
+              <br />
+              <br />
+            </div>
+          </>
         );
       })}
       <div className="comments">
@@ -77,7 +76,7 @@ function BlogDetails() {
               maxLength={390}
               placeholder="Write your comment here"
               className="comment__textarea"
-              type="text"
+              
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             />

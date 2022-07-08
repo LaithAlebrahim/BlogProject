@@ -8,13 +8,14 @@ import NptFound from "./components/NotFound";
 import Login from "./components/Login";
 import "./App.css";
 
-function App() {
+
+function App () {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
   return (
     <Router>
       <div className="App">
-        <Navbar setIsAuth={setIsAuth} isAuth={isAuth} />
+        <Navbar isAuth={isAuth} setIsAuth={setIsAuth} />
         <div className="component">
           <Switch>
             <Route exact path="/blogproject4">
@@ -37,6 +38,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

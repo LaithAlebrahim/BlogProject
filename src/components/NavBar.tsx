@@ -5,9 +5,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import "./NavBar.css";
+
 import { auth } from "./firebase-config";
 
-const Navbar = ({ setIsAuth, isAuth }) => {
+export const Navbar: React.FC<{
+  isAuth: boolean | string;
+  setIsAuth: (isAuth: any) => void;
+}> = ({ isAuth, setIsAuth }) => {
   const signOutUser = () => {
     signOut(auth).then(() => {
       localStorage.clear();
@@ -24,6 +28,7 @@ const Navbar = ({ setIsAuth, isAuth }) => {
         <Link className="link" to="/blogproject4">
           Home
         </Link>
+
         {!isAuth ? (
           <Link className="link" to="/login">
             Login

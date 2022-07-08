@@ -12,19 +12,19 @@ function Create() {
   const [isSubmmiting, setIsSubmmiting] = useState(false);
   const postCollectionRef = collection(db, "posts");
   const creatpost = async () => {
-    if(title.length > 0 && Body.length > 0){
-    setIsSubmmiting(true);
-    await addDoc(postCollectionRef, {
-      title,
-      Body,
-      writer: auth.currentUser.displayName,
-      comments: [],
-      id: auth.currentUser.uid.toUpperCase(),
-    });
+    if (title.length > 0 && Body.length > 0) {
+      setIsSubmmiting(true);
+      await addDoc(postCollectionRef, {
+        title,
+        Body,
+        writer: auth.currentUser.displayName,
+        comments: [],
+        id: auth.currentUser.uid.toUpperCase(),
+      });
 
-    window.location.pathname = "/blogproject4";
-  
-  }};
+      window.location.pathname = "/blogproject4";
+    }
+  };
 
   return (
     <div className="create">

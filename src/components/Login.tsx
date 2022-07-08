@@ -6,10 +6,12 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "./firebase-config";
 import "./Login.css";
 
-function Login({ setIsAuth }) {
+function Login(
+  {  setIsAuth }: {  setIsAuth:(isAuth: any) => void; }
+) {
   function handleLogin() {
     signInWithPopup(auth, provider).then((result) => {
-      localStorage.setItem("isAuth", true);
+      localStorage.setItem("isAuth", "true");
       setIsAuth(true);
       window.location.pathname = "/blogproject4";
     });

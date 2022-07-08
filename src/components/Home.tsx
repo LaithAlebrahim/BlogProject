@@ -9,7 +9,9 @@ import { Link } from "react-router-dom";
 import { auth, db } from "./firebase-config";
 import "./Home.css";
 
-const Home = ({ isAuth }) => {
+const Home = (
+  { isAuth}: { isAuth: boolean | string }
+) => {
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
@@ -28,7 +30,7 @@ const Home = ({ isAuth }) => {
 
   return (
     <div className="home">
-      <h2 className="home__title">Blogs</h2>
+      <h2 className="home__title">Our Blogs</h2>
       <br />
       <br />
       {postLists.map((post) => (
