@@ -1,0 +1,7 @@
+body {
+    background: linear-gradient(110deg, #cc8aff 4%, #cc8aff 40%, #a471e6 calc(40% + 1px), #a471e6 50%, #723dd5 calc(50% + 1px), #723dd5 70%, #2f1977 calc(70% + 1px), #2f1977 100%);
+    background-position: 100%;
+    background-attachment: fixed;
+
+    color: rgb(11, 21, 95);
+}
