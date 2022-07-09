@@ -7,11 +7,9 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { auth, db } from "./firebase-config";
-import "./Home.css";
+import styles from "./Home.module.css";
 
-const Home = (
-  { isAuth}: { isAuth: boolean | string }
-) => {
+const Home = ({ isAuth }: { isAuth: boolean | string }) => {
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
@@ -29,23 +27,23 @@ const Home = (
   };
 
   return (
-    <div className="home">
-      <h2 className="home__title">Our Blogs</h2>
+    <div className={styles.home}>
+      <h2 className={styles.home__title}>Our Blogs</h2>
       <br />
       <br />
       {postLists.map((post) => (
-        <div className="blog__preview">
-          <div className="left__part">
+        <div className={styles.blog__preview}>
+          <div className={styles.left__part}>
             <Link to={`/blogs/${post.id}`}>
-              <h2 className="post__title">{post.title}</h2>
-              <h2 className="post__author"> Written By {post.writer}</h2>
+              <h2 className={styles.post__title}>{post.title}</h2>
+              <h2 className={styles.post__author}> Written By {post.writer}</h2>
               <br />
             </Link>
           </div>
-          <div className="right__part">
+          <div className={styles.right__part}>
             {isAuth && post.writer === auth.currentUser.displayName && (
               <button
-                className="post__button"
+                className={styles.post__button}
                 onClick={() => {
                   deletePost(post.id);
                 }}

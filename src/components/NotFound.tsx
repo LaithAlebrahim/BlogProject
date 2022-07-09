@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NotFound.css";
+import styles from "./NotFound.module.css";
 
 function NotFound() {
   return (
-    <div className="not__found">
-      <h1 className="back__title">Sorry</h1>
-      <p className="back__label">The page you are looking for does not exist</p>
-      <Link className="link__back" to="/blogproject4">
+    <div className={styles.not__found}>
+      <h1 className={styles.back__title}>Sorry</h1>
+      <p className={styles.back__label}>
+        The page you are looking for does not exist
+      </p>
+      <Link className={styles.link__back} to="/blogproject4">
         Back to HomePage ......
       </Link>
     </div>

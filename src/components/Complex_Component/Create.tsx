@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
-import "./Create.css";
+import styles from "./Create.module.css";
 
 function Create() {
   const [title, setTitle] = useState("");
@@ -27,12 +27,12 @@ function Create() {
   };
 
   return (
-    <div className="create">
-      <h2 className="create__title">Add New Blog</h2>
+    <div className={styles.create}>
+      <h2 className={styles.create__title}>Add New Blog</h2>
       <form>
-        <div className="blog__title">
+        <div className={styles.blog__title}>
           <input
-            className="blog__title__text"
+            className={styles.blog__title__text}
             type="text"
             required
             value={title}
@@ -40,9 +40,9 @@ function Create() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="blog__text">
+        <div className={styles.blog__text}>
           <textarea
-            className="blog__text__text"
+            className={styles.blog__text__text}
             required
             value={Body}
             placeholder="Write here blog's text"
@@ -50,13 +50,13 @@ function Create() {
           ></textarea>
         </div>
       </form>
-      <div className="blog__bottom">
+      <div className={styles.blog__bottom}>
         {isSubmmiting ? (
-          <button className="blog__button" disabled>
+          <button className={styles.blog__button} disabled>
             Submitting...
           </button>
         ) : (
-          <button className="blog__button" onClick={creatpost}>
+          <button className={styles.blog__button} onClick={creatpost}>
             Submit
           </button>
         )}

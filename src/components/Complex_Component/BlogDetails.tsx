@@ -8,7 +8,7 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, doc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
-import "./BlogDetails.css";
+import styles from "./BlogDetails.module.css";
 
 function BlogDetails() {
   const [postLists, setPostList] = useState([]);
@@ -41,12 +41,12 @@ function BlogDetails() {
       {post.map((post) => {
         return (
           <>
-            <div className="blog__details">
-              <h2 className="post__title1">{post.title}</h2>
-              <p className="post__text">{post.Body}</p>
+            <div className={styles.blog__details}>
+              <h2 className={styles.post__title1}>{post.title}</h2>
+              <p className={styles.post__text}>{post.Body}</p>
             </div>
-            <div className="post__bottom">
-              <p className="post__author1">Written by {post.writer}</p>
+            <div className={styles.post__bottom}>
+              <p className={styles.post__author1}>Written by {post.writer}</p>
               <br />
               <br />
               <br />
@@ -54,14 +54,14 @@ function BlogDetails() {
           </>
         );
       })}
-      <div className="comments">
-        <h2 className="comments__title">Comments: </h2>
+      <div className={styles.comments}>
+        <h2 className={styles.comments__title}>Comments: </h2>
         {post.map((post) => {
           return (
-            <div className="comment__preview">
+            <div className={styles.comment__preview}>
               {post.comments.map((comment) => {
                 return (
-                  <div className="comment__preview__text">
+                  <div className={styles.comment__preview__text}>
                     <p>{comment}</p>
                   </div>
                 );
@@ -75,14 +75,13 @@ function BlogDetails() {
             <textarea
               maxLength={390}
               placeholder="Write your comment here"
-              className="comment__textarea"
-              
+              className={styles.comment__textarea}
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             />
           </div>
         </form>
-        <button className="comment__button" onClick={addComment}>
+        <button className={styles.comment__button} onClick={addComment}>
           Add Comment
         </button>
       </div>

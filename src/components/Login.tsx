@@ -4,11 +4,9 @@
 import React from "react";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "./firebase-config";
-import "./Login.css";
+import styles from "./Login.module.css";
 
-function Login(
-  {  setIsAuth }: {  setIsAuth:(isAuth: any) => void; }
-) {
+function Login({ setIsAuth }: { setIsAuth: (isAuth: any) => void }) {
   function handleLogin() {
     signInWithPopup(auth, provider).then((result) => {
       localStorage.setItem("isAuth", "true");
@@ -18,9 +16,9 @@ function Login(
   }
 
   return (
-    <div className="login__page">
-      <p className="login__label">Sign in With Google Account</p>
-      <button className="login__btn" onClick={handleLogin}>
+    <div className={styles.login__page}>
+      <p className={styles.login__label}>Sign in With Google Account</p>
+      <button className={styles.login__btn} onClick={handleLogin}>
         Sign in With Google{" "}
       </button>
     </div>

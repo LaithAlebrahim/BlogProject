@@ -8,8 +8,7 @@ import NptFound from "./components/NotFound";
 import Login from "./components/Login";
 import "./App.css";
 
-
-function App () {
+function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
   return (
@@ -38,6 +37,6 @@ function App () {
       </div>
     </Router>
   );
-};
+}
 
 export default App;
